@@ -1,0 +1,29 @@
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="prettyJSON.css">
+    <title>Pretty Code</title>
+    <style>
+        body {
+            margin:0 auto;
+            padding: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <pre class="prettyMarkContent prettyMarkDark" style="width: 49%; float:left;"></pre>
+    <pre class="prettyMarkContent prettyMarkLight" style="width: 49%;border: 1px solid black; float:left;"></pre>
+    <script src="prettyJSON.js"></script>
+    <script>
+
+        const htmlJSON = prettyJSON('{"status":true,"location":{"name":"London","region":"City of London, Greater London","country":"United Kingdom","lat":51.52,"lon":-0.11,"tz_id":"Europe/London","localtime_epoch":1623337003,"localtime":"2021-06-10 15:56"},"list":["time", "weather", 12, 1.1, null]}');
+
+        // add
+        Array.from(document.getElementsByClassName('prettyMarkContent')).forEach(element => {
+            element.innerHTML = htmlJSON;
+        });
+    </script>
+</body>
+</html>
